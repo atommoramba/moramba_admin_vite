@@ -10,7 +10,7 @@ export const createPaymentRequest = async (amount, currency) => {
             merchant_id: import.meta.env.VITE_MERCHANT_ID,
             amount,
             currency,
-            callback_url: "https://www.moramba.app/payment-success", // Success page
+            callback_url: "https://www.moramba.com/login", // Success page
             metadata: {
               invoice_id: `INV-${Date.now()}`,
             },
