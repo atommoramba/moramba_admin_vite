@@ -9,12 +9,12 @@ lerna-debug.log*
 
 # Ignore environment variables
 +.env
-
 # Dependencies & Build Files
 node_modules
 dist
 dist-ssr
 *.local
+.env
 
 # Editor directories and files
 .vscode/*
