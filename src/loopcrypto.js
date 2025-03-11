@@ -1,20 +1,20 @@
 export const createPaymentRequest = async (amount, currency) => {
     try {
-        const response = await fetch("https://api.loopcrypto.dev/v1/payments", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${import.meta.env.VITE_LOOPCRYPTO_API_KEY}`
+        const response = await fetch("https://demo.api.loopcrypto.xyz/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${import.meta.env.VITE_LOOPCRYPTO_API_KEY}`,
+          },
+          body: JSON.stringify({
+            merchant_id: import.meta.env.VITE_MERCHANT_ID,
+            amount,
+            currency,
+            callback_url: "https://www.moramba.app/payment-success", // Success page
+            metadata: {
+              invoice_id: `INV-${Date.now()}`,
             },
-            body: JSON.stringify({
-                merchant_id: import.meta.env.VITE_MERCHANT_ID,
-                amount,
-                currency,
-                callback_url: "https://www.moramba.app/payment-success", // Success page
-                metadata: {
-                    invoice_id: `INV-${Date.now()}`
-                }
-            })
+          }),
         });
 
         const data = await response.json();
