@@ -1,6 +1,6 @@
 export const createPaymentRequest = async (amount, currency) => {
     try {
-        const response = await fetch("https://demo.api.loopcrypto.xyz/", {
+        const response = await fetch("https://api.loopcrypto.xyz/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
